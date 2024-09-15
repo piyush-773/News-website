@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather forecast</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="content">
+        <div class="home" id="home">
+            <div class="search">
+                <input type="text" placeholder="Enter your city name" spellcheck="false">
+                <button><img src="loupe.png" style="width: 18px;"></button>
+            </div>
+            <div class="info">
+                <h1 class="city">Bangalore</h1>
+                <p class="date" style="justify-content: center; display: flex;">01-01-1999</p>
+            </div>
+            <div class="temp_info info">
+                <h1><span class="temp">30</span>°C</h1>
+                <p style="margin-bottom: 0;">&nbsp;min/max</p>
+                <span class="min">29</span>°C/<span class="max">31</span>°C
+            </div>
+            <div class="div" style="display: flex; margin-top: 10px;">
+                <p>Humadity<br><span class="humadity">50</span>%</p>
+                <p style="margin-left: 40px; text-transform: none;">Wind speed<br><span class="wind">18</span>km/h</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

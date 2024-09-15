@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;1,500&display=swap');
+html,body{
+    height: 100%;
+    width: 100%;
+}
+body{
+    text-transform: capitalize;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+    overflow-x: hidden;
+    background: linear-gradient(-45deg, rgba(0, 0, 255, 0.75) , rgba(0, 128, 0, 0.75) , rgba(255, 0, 0, 0.75));
+	background-size: 400% 400%;
+    /* background-attachment: fixed; */
+    animation: gradient 10s ease infinite;
+}
+.content{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+}
+/* .content{
+    background-image: url(/images/background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: images 10s infinite;
+} */
+.header{
+    width: 100%;
+    background: rgba(0, 0, 0, 0.258);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* position: fixed; */
+}
+.left{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    margin: 0 15%;
+}
+.logo{
+    padding: 15px;
+    font-size: larger;
+    font-weight: 1000;
+    flex-direction: column;
+    cursor: pointer;
+}
+.logo a{
+    display: flex;
+    flex-direction: column;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+.logo a:hover{
+    animation: list_glow 1s ease-in-out infinite alternate;
+}
+.logo a span{
+    padding: 3px;
+    border-radius: 0 5px;
+}
+.nav ul{
+    column-gap: 5rem;
+    display: flex;
+    margin-right: 25px;
+    list-style: none;
+    justify-content: space-between;
+}
+.nav ul li{
+    border-radius: 5px;
+    font-size: 1.5em;
+    padding: 10px;
+    color: #fff;
+}
+.nav ul li:hover{
+    cursor: pointer;
+    transition: ease-in;
+    text-decoration: underline;
+    animation: list_glow 1s ease-in-out infinite alternate;
+}
+.main{
+    height: 100%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: ease-in 4s;
+    /* align-items: center; */
+}
+.main h4,h6{
+    margin: 0;
+    animation: move-text 4s forwards;
+    opacity: 0;
+}
+.main p{
+    font-size: 5rem;
+    color: chartreuse;
+    margin: 0;
+}
+.main h4{
+    font-size: 3rem;
+    color: yellow;
+}
+.main h6{
+    font-size: 1rem;
+    color: black;
+}
+.about{
+    margin-top: 0;
+    background: linear-gradient(-60deg,blue,black,navy,);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+}
+.aboutdiv{
+    background: linear-gradient(-45deg, blue , green , red);
+	background-size: 400% 400%;
+    animation: gradient 10s ease infinite;
+    border-radius: 10px;
+    width: 80%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.div1{
+    font-size: 0.7rem;
+    margin-bottom: -30px;
+    color: aquamarine;
+    /* animation: list_glow 1s ease-in-out infinite alternate; */
+}
+.div2{
+    font-size: 1.5rem;
+    color: white;
+    /* animation: list_glow 1s ease-in-out infinite alternate; */
+}
+::-webkit-scrollbar{
+    width: 10px;
+    height: 10px;
+}
+::-webkit-scrollbar-thumb{
+    border-radius: 20px;
+    background: linear-gradient(-45deg,grey, white,grey);
+}
+::-webkit-scrollbar-track{
+    background: rgba(172, 255, 47, 0.367);
+    border-radius: 20px;
+}
+#container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    padding: 8px;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.17);
+    border-radius: 10px;
+}
+.div3{
+    display: flex;
+    column-gap: 40px;
+    width: 62%;
+    overflow-x: scroll;
+    /* height: 500px; */
+    padding: 15px;
+    
+    align-items: center;
+}
+.card img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+.card{
+    flex: 0 0 auto;
+    border-radius: 10px;
+    height: 55vh;
+    width: 100%;
+}
+
+@keyframes move-text {
+    0% { bottom: -0.2em; opacity: 1; }
+    50% { bottom: 0.2em; }
+    100% { bottom: 0; opacity: 1; }
+}
+
+@keyframes gradient {
+    0%{ background-position: 0% 50%; }
+    50%{ background-position: 100% 50%; }
+    100%{ background-position: 0% 50%; }
+}
+
+@keyframes list_glow {
+    from {
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px blueviolet, 0 0 40px blueviolet, 0 0 50px blue, 0 0 60px blue, 0 0 70px blue;
+    }
+    
+    to {
+      text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+    }
+  }

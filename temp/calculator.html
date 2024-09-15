@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="input" class="input">
+        <input type="text" placeholder="0" id="display">
+    </div>
+    <div class="btns" id="btns">
+        <button onclick="addd('1')">1</button>
+        <button onclick="addd('2')">2</button>
+        <button onclick="addd('3')">3</button>
+        <button onclick="addd('4')">4</button>
+        <button onclick="addd('5')">5</button>
+        <button onclick="addd('6')">6</button>
+        <button onclick="addd('7')">7</button>
+        <button onclick="addd('8')">8</button>
+        <button onclick="addd('9')">9</button>
+        <button onclick="addd('0')">0</button>
+        <button onclick="addd('.')">.</button>
+        <button onclick="addd('+')">+</button>
+        <button onclick="addd('-')">-</button>
+        <button onclick="addd('*')">x</button>
+        <button onclick="addd('/')">/</button>
+        <button onclick="evalu()">=</button>
+        <button onclick="clear_disp()">AC</button>
+        <button onclick="del_disp()">del</button>
+
+
+
+    </div>
+    <script>
+        var display=document.getElementById("display");
+
+        function addd(data){
+            display.value += data;
+        }
+        function evalu(){
+            var n=eval(display.value)
+            // alert(n)
+            display.value=n;
+        }
+        function clear_disp(){
+            display.value=""
+        }
+        function del_disp(){
+            var x=display.value;
+            var y=x.slice(0,x.length-1)
+            display.value=y;
+        }
+        // evaluate()
+    </script>
+</body>
+</html>

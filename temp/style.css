@@ -1,0 +1,94 @@
+:root{
+    --black : rgba(0, 0, 0, 0.5);
+    --pink : rgba(255, 192, 203, 0.5);
+    --white : white;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body{
+    background: var(--black);
+    color: white;
+    width: 100%;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+}
+#form{
+    margin: 40px 0;
+    width: 80%;
+    height: 6rem;
+    border-radius: 10px;
+    max-width: 800px;
+    background: var(--black);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+input{
+    height: 2.75rem;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    font-size: 18px;
+    background: black;
+    color: white;
+    width: 90%;
+    padding: 5px;
+}
+button{
+    background: none;
+    border: none;
+    font-size: 30px;
+    color: white;
+}
+
+.items{
+    max-width: 800px;
+    display: flex;
+    background: var(--black);
+    height: 50vh;
+    border-radius: 10px;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+.task{
+    width: 90%;
+    display: flex;
+    align-items: center;
+    margin: 2px 0;
+
+}
+.content{
+    width: 100%;
+}
+.content input{
+    width: 100%;
+}
+
+.edit{
+    margin:0 10px;
+    margin-left: -90px;
+    color: greenyellow;
+}
+.delete{
+    color: red;
+}
+::-webkit-scrollbar{
+    background: transparent;
+}

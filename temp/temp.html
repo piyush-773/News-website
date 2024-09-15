@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    #todo-list {
+      max-width: 400px;
+      margin: 20px auto;
+    }
+
+    #task-input {
+      width: 70%;
+      padding: 8px;
+    }
+
+    button {
+      padding: 8px;
+      margin-left: 5px;
+    }
+  </style>
+  <title>To-Do List</title>
+</head>
+<body>
+  <div id="todo-list">
+    <h2>To-Do List</h2>
+    <input type="text" id="task-input" placeholder="Enter a task">
+    <button onclick="addTask()">Add Task</button>
+    <ul id="tasks"></ul>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Load tasks from local storage
+      loadTasks();
+    });
+
+    function addTask() {
+      const taskInput = document.getElementById('task-input');
+      const taskText = taskInput.value.trim();
+
+      if (taskText === '') {
+        alert('Please enter a valid task!');
+        return;
+      }
+
+      // Check if tasks are already in local storage
+      const tasks = getTasksFromLocalStorage();
+
+      // Add the new task to the list
+      tasks.push(taskText);
+
+      // Save the updated tasks to local storage
+      saveTasksToLocalStorage(tasks);
+
+      // Clear the input field
+      taskInput.value = '';
+
+      // Update the tasks on the page
+      displayTasks();
+    }
+
+    function editTask(index) {
+      const tasks = getTasksFromLocalStorage();
+      const updatedTask = prompt('Edit task:', tasks[index]);
+
+      if (updatedTask !== null) {
+        tasks[index] = updatedTask;
+        saveTasksToLocalStorage(tasks);
+        displayTasks();
+      }
+    }
+
+    function deleteTask(index) {
+      const tasks = getTasksFromLocalStorage();
+      tasks.splice(index, 1);
+      saveTasksToLocalStorage(tasks);
+      displayTasks();
+    }
+
+    function loadTasks() {
+      const tasks = getTasksFromLocalStorage();
+      displayTasks(tasks);
+    }
+
+    function displayTasks(tasks) {
+      const tasksContainer = document.getElementById('tasks');
+      tasksContainer.innerHTML = '';
+
+      tasks = tasks || getTasksFromLocalStorage();
+
+      tasks.forEach((task, index) => {
+        const listItem = document.createElement('li');
+        listItem.textContent = task;
+
+        const editButton = document.createElement('button');
+        editButton.textContent = 'Edit';
+        editButton.onclick = () => editTask(index);
+
+        const deleteButton = document.createElement('button');
+        deleteButton.textContent = 'Delete';
+        deleteButton.onclick = () => deleteTask(index);
+
+        listItem.appendChild(editButton);
+        listItem.appendChild(deleteButton);
+
+        tasksContainer.appendChild(listItem);
+      });
+    }
+
+    function getTasksFromLocalStorage() {
+      return JSON.parse(localStorage.getItem('tasks')) || [];
+    }
+
+    function saveTasksToLocalStorage(tasks) {
+      localStorage.setItem('tasks', JSON.stringify(tasks));
+    }
+  </script>
+</body>
+</html>

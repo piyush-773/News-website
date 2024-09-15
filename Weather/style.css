@@ -1,0 +1,69 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-transform: capitalize;  
+    font-family: sans-serif;  
+}
+.content{
+    background-image: url("Nature-Wallpaper.jpg");
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    background: rgb(2,0,36);
+    background: linear-gradient(0deg, rgba(2, 0, 36, 0.8) 0%, rgba(9,9,121,0.8) 35%, rgba(0,212,255,0.8) 70%,rgb(14, 251, 85,0.8) 100%);
+    /* height: 60vh; */
+    width: 307px;
+    border-radius: 20px;
+}
+.search{
+    margin-top: 30px;
+    display: flex;
+    opacity: .5;
+
+    /* justify-content: space-between; */
+}
+
+.search:hover{
+    opacity: 1;
+}
+.search input{
+    /* opacity: 0.5; */
+    border: none;
+    margin-left: -20px;
+    width: 220px;
+    height: 40px;
+    border-radius: 30px;
+    font-size: large;
+    text-align: center;
+    /* color: blueviolet; */
+}
+p{color: white;}
+button{
+    /* opacity: .5; */
+    margin: 0 -20px 0 5px;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: white;
+}
+.contact{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.info{
+    color: rgb(228, 244, 228);
+}

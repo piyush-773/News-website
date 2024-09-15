@@ -1,0 +1,20 @@
+
+#container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(67, 233, 242);
+  }
+.pk{
+    height: 100px;
+    width: 200px;
+    background: black;
+    margin-bottom: 20px;
+}
+input[type="color"] {
+	border: none;
+	width: 200px;
+	height: 150px;
+}

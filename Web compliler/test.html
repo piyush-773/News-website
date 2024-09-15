@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Builder</title>
+    <style>
+        .editor {
+            width: 45%;
+            height: 80vh;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px;
+            float: left;
+            overflow: auto;
+        }
+
+        #preview {
+            width: 45%;
+            height: 80vh;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px;
+            float: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="editor-html" class="editor" contenteditable="true">&lt;!DOCTYPE html&gt;
+        &lt;html lang="en"&gt;
+        &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+        &lt;title&gt;My Website&lt;/title&gt;
+        &lt;style&gt;
+        /* Your CSS code here */
+        &lt;/style&gt;
+        &lt;/head&gt;
+        &lt;body&gt;
+        &lt;h1&gt;Hello, World!&lt;/h1&gt;
+        &lt;script&gt;
+        // Your JavaScript code here
+        &lt;/script&gt;
+        &lt;/body&gt;
+        &lt;/html&gt;</div>
+    <button id="btn-preview">Preview</button>
+    <iframe id="preview"></iframe>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const htmlEditor = document.getElementById("editor-html");
+            const previewFrame = document.getElementById("preview");
+            const previewButton = document.getElementById("btn-preview");
+
+            previewButton.addEventListener("click", function () {
+                const htmlCode = htmlEditor.innerText;
+                const cssCode = getCSSCode();
+                const jsCode = getJSCode();
+
+                const fullHTML = `
+            <html>
+            <head>
+                <style>${cssCode}</style>
+            </head>
+            <body>
+                ${htmlCode}
+                <script>${jsCode}</script>
+</body>
+
+</html>
+`;
+
+const previewDoc = previewFrame.contentDocument || previewFrame.contentWindow.document;
+previewDoc.open();
+previewDoc.write(fullHTML);
+previewDoc.close();
+});
+
+function getCSSCode() {
+const styleTags = document.querySelectorAll("#editor-html style");
+let cssCode = "";
+styleTags.forEach(tag => {
+cssCode += tag.innerHTML;
+});
+return cssCode;
+}
+
+function getJSCode() {
+const scriptTags = document.querySelectorAll("#editor-html script");
+let jsCode = "";
+scriptTags.forEach(tag => {
+jsCode += tag.innerHTML;
+});
+return jsCode;
+}
+});
+
+</script>
+</body>
+
+</html>

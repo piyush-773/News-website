@@ -1,0 +1,80 @@
+:root {
+    --bg-color: black;
+    --label: rgba(0, 0, 0, 0.546);
+    --primary-color: white;
+    --secondary-color: aqua;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+    height: 50px;
+    background-color: bisque;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+body {
+    background: var(--bg-color);
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    color: var(--primary-color);
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+.left{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50%;
+    width: 100%;
+}
+.right {
+    display: flex;
+    flex-direction: column;
+    height: 50%;
+    width: 100%;
+    padding: 10px;
+}
+.html,
+.css,
+.js {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 33%;
+    height: 100%;
+    border: 2px solid var(--secondary-color);
+    border-radius: 10px;
+}
+
+textarea {
+    height: 92%;
+    padding: 10px;
+    outline: none;
+    border-radius: 0 0 10px 10px;
+}
+
+label {
+    padding: 4px;
+    border-radius: 10px 10px 0 0;
+    background-color: var(--label);
+    height: 8%;
+}
+iframe{
+    height: 100%;
+    padding: 10px;
+    background-color: var(--primary-color);
+}

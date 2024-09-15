@@ -1,0 +1,53 @@
+<div class="education_info">
+    <div class="div3">
+        <div class="qualification matric card1">
+            <div class="top">
+                <h4>matric <span>(2017)</span></h4>
+                <h2>DVC +2 high school</h2>
+                <p>was established in 1972 and it is managed by the Central Govt. It is located in
+                    Rural area.</p>
+                <p class="address"><br>telaiya dam ,koderma</p>
+            </div>
+            <div class="bottom">
+                <!-- <img src="/images/dvc.jpeg" alt=""> -->
+            </div>
+        </div>
+        <div class="qualification inter card1">
+            <div class="top">
+                <h4>I. sc <span>(2019)</span></h4>
+                <h2>CH +2 high school</h2>
+                <p>was established in 1937 and it is managed by the Department of Education. It is
+                    located in Urban area.</p>
+                <p class="address">jhumri telaiya,koderma</p>
+            </div>
+            <div class="bottom">
+                <!-- <img src="/images/ch.jpeg" alt=""> -->
+            </div>
+
+        </div>
+        <div class="qualification graduation card1">
+            <div class="top">
+                <h4>BCA <span>(2019-2022)</span></h4>
+                <h2>St. columba's collge</h2>
+                <p>was established in 1899 and it is managed by the Department of Education. It is
+                    located in Urban area.</p>
+                <p class="address">Hazaribag, Hazaribag</p>
+            </div>
+            <div class="bottom">
+                <!-- <img src="/images/columba.jpeg" alt=""> -->
+            </div>
+        </div>
+        <div class="qualification master card1">
+            <div class="top">
+                <h4>MCA <span>(pursuing)</span></h4>
+                <h2>Chandigarh university</h2>
+                <p>was established in 2012 as a private instititution, and has since then grown its
+                    partnerships</p>
+                <p class="address"><br>mohali, panjab</p>
+            </div>
+            <div class="bottom">
+                <!-- <img src="/images/cu.jpg" alt=""> -->
+            </div>
+        </div>
+    </div>
+</div>

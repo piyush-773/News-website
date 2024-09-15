@@ -1,0 +1,98 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+.container{
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(95, 158, 160, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main{
+    height: 80vh;
+    width: 50vw;
+    background: linear-gradient(0deg, rgba(2, 0, 36) 0%, rgb(108, 108, 216) 25%, rgba(0,212,255) 70%,rgb(14, 251, 85) 100%);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.game{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.header{
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+}
+.header img{
+    width: 150px;
+}
+.user img{
+    transform: rotate(90deg);
+}
+
+.computer img{
+    /* transform: rotate(180deg); */
+    transform: rotate(-90deg) rotateY(180deg);
+}
+.result{
+    text-align: center;
+    /* margin-top: 1.5rem; */
+    font-size: 3rem;
+    color: red;
+    cursor:default;
+}
+.header p{
+    margin-bottom: -15px;
+    cursor: pointer;
+    color: red;
+    font-size: 1.5rem;
+}
+.footer{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+.rock img{
+    width: 100px;
+}
+.rock{
+    cursor: pointer;
+    color: red;
+    font-size: 1.5rem;
+    opacity: 0.7;
+}
+.rock:hover{
+    opacity: 1;
+    /* transform: translate(0,-10px); */
+    transform: scale(1.2,1.2);
+}
+.active{
+    animation: shake .5s infinite;
+}
+
+@keyframes shake {
+    0% {transform: translateY(10px);}
+    50% {transform: translateY(-10px);}
+    100% {transform: translateY(10px);}
+}
+
+@media screen and (max-width:700px) {
+    .main{
+        /* height: 100vh; */
+        width: 80vw;
+        height: 65vh;
+    }
+}

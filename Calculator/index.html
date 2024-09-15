@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .row2 .bp {
+            color: grey;
+            text-transform: lowercase;
+        }
+        .row2 button{
+            height: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="content">
+            <div class="menu">
+                <button><i class="fa-solid fa-down-left-and-up-right-to-center"></i></button>
+                <button onclick="calc()"><i class="fa-solid fa-equals"></i></button>
+                <button onclick="ad_calc()"><i class="fa-regular fa-object-group"></i></button>
+                <button onclick="money()"><i class="fa-solid fa-circle-dollar-to-slot"></i></button>
+                <button><i class="fa-solid fa-ellipsis-vertical"></i></button>
+            </div>
+            <div class="pageview">
+                <div id="calc" class="calc preview">
+                    <div class="input">
+                        <textarea placeholder="0" readonly id="input"></textarea>
+                    </div>
+                    <div id="a_calc" class="btn">
+                        <div class="row1">
+                            <button class="op">AC</button>
+                            <button onclick="back()" class="op"><i class="fa-solid fa-delete-left"></i></button>
+                            <button id="numbers" class="op">%</button>
+                            <button id="numbers" class="op">/</button>
+                        </div>
+                        <div class="row1">
+                            <button id="numbers" class="ap">7</button>
+                            <button id="numbers" class="ap">8</button>
+                            <button id="numbers" class="ap">9</button>
+                            <button id="numbers" class="op">*</button>
+                        </div>
+                        <div class="row1">
+                            <button id="numbers" class="ap">4</button>
+                            <button id="numbers" class="ap">5</button>
+                            <button id="numbers" class="ap">6</button>
+                            <button id="numbers" class="op">-</button>
+                        </div>
+                        <div class="row1">
+                            <button id="numbers" class="ap">1</button>
+                            <button id="numbers" class="ap">2</button>
+                            <button id="numbers" class="ap">3</button>
+                            <button id="numbers" class="op">+</button>
+                        </div>
+                        <div class="row1">
+                            <button onclick="more()" class="expand"><i class="fa-solid fa-retweet"></i></button>
+                            <button id="numbers" class="ap">0</button>
+                            <button id="numbers" class="ap">.</button>
+                            <button id="numbers" class="op">=</button>
+                        </div>
+                    </div>
+                    <div id="s_calc" class="btn">
+                        <div class="row1 row2">
+                            <button class="bp"><i class="fa-solid fa-square-root-variable"></i></button>
+                            <button class="bp"><small>cos</small></button>
+                            <button class="bp"><small>sin</small></button>
+                            <button class="bp">(</button>
+                            <button class="bp">)</button>
+                        </div>
+                        <div class="row1 row2">
+                            <button id="numbers" class="bp"><small>x</small>!</button>
+                            <button class="op">AC</button>
+                            <button onclick="back()" class="op"><i class="fa-solid fa-delete-left"></i></button>
+                            <button id="numbers" class="op">%</button>
+                            <button id="numbers" class="op">/</button>
+                        </div>
+                        <div class="row1 row2">
+                            <button class="bp"><i class="fa-solid fa-square-root-variable"></i></button>
+                            <button id="numbers" class="ap">7</button>
+                            <button id="numbers" class="ap">8</button>
+                            <button id="numbers" class="ap">9</button>
+                            <button id="numbers" class="op">*</button>
+                        </div>
+                        <div class="row1 row2">
+                            <button id="numbers" class="bp"><small>x</small><sup><small>y</small></sup></button>
+                            <button id="numbers" class="ap">4</button>
+                            <button id="numbers" class="ap">5</button>
+                            <button id="numbers" class="ap">6</button>
+                            <button id="numbers" class="op">-</button>
+                        </div>
+                        <div class="row1 row2">
+                            <button id="numbers" class="bp">π</button>
+                            <button id="numbers" class="ap">1</button>
+                            <button id="numbers" class="ap">2</button>
+                            <button id="numbers" class="ap">3</button>
+                            <button id="numbers" class="op">+</button>
+                        </div>
+                        <div class="row1 row2">
+                            <button onclick="more()" class="expand"><i class="fa-solid fa-retweet"></i></button>
+                            <button class="bp">e</button>
+                            <button id="numbers" class="ap">0</button>
+                            <button id="numbers" class="ap">.</button>
+                            <button id="numbers" class="op">=</button>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                <div id="ad_calc" class="ad_calc preview">
+                    <div class="row">
+                        <p class="item"><i class="fa-solid fa-cake-candles"></i>
+                            <span>age</span>
+                        </p>
+                        <p class="item"><i class="fa-solid fa-globe"></i>
+                            <span>data</span>
+                        </p>
+                        <p class="item"><i class="fa-solid fa-cake-candles"></i>
+                            <span>length</span>
+                        </p>
+                        <p class="item"><i class="fa-solid fa-gauge"></i>
+                            <span>speed</span>
+                        </p>
+                        <p></p>
+                    </div>
+                    <div class="row" style="margin-left: 10px;">
+                        <p class="item"><i class="fa-sharp fa-solid fa-up-right-and-down-left-from-center"></i>
+                            <span>area</span>
+                        </p>
+                        <p class="item"><i class="fa-solid fa-calendar-days"></i></i>
+                            <span>date</span>
+                        </p>
+                        <p class="item"><i class="fa-solid fa-scale-unbalanced"></i>
+                            <span>mass</span>
+                        </p>
+                        <p class="item"><i class="fa-solid fa-temperature-three-quarters"></i>
+                            <span>temperature</span>
+                        </p>
+                        <p></p>
+
+                    </div>
+                    <div class="row">
+                        <p class="item"><i class="fa-sharp fa-solid fa-child"></i>
+                            <span>BMI</span>
+                        </p>
+                        <p class="item"><i class="fa-solid fa-tag fa-rotate-90"></i>
+                            <span>discount</span>
+                        </p>
+                        <p class="item"><i class="fa-solid fa-list-ol"></i>
+                            <span>numerical<br>&nbsp;&nbsp;system</span>
+                        </p>
+                        <p class="item"><i class="fa-regular fa-clock"></i>
+                            <span>time</span>
+                        </p>
+                        <p></p>
+
+                    </div>
+                </div>
+                <div id="money" class="money preview">
+                    <div class="row">
+                        <p class="item"><i class="fa-solid fa-book"></i>
+                            <span>GST</span>
+                        </p>
+                        <p class="item"><i class="fa-solid fa-indian-rupee-sign"></i>
+                            <span>Loan</span>
+                        </p>
+                        <p></p>
+                        <p></p>
+                        <p></p>
+                    </div>
+                    <div class="row">
+                        <p class="item"><i class="fa-solid fa-circle-dollar-to-slot"></i>
+                            <span>currency</span>
+                        </p>
+                        <p></p>
+                        <p></p>
+                        <p></p>
+                        <p></p>
+                    </div>
+                    <div class="row">
+                        <p class="item"><i class="fa-solid fa-arrow-up-right-dots"></i>
+                            <span>investment</span>
+                        </p>
+                        <p></p>
+                        <p></p>
+                        <p></p>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

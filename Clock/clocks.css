@@ -1,0 +1,82 @@
+body{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.analog {
+    width: 348px;
+    height: 348px;
+    border-radius: 50%;
+    position: relative;
+    background-image: url(images/clock.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.p1,.p2,.p3,.p4{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.p1{
+    animation: rtz 60s infinite steps(60);
+}
+.p2{
+    animation: rtz 3600s infinite steps(60);
+}
+.p3{
+    animation: rtz 43200s infinite steps(60);
+}
+.s {
+    background-image: radial-gradient(grey,white,grey,white);
+    height: 40%;
+    left: 49.5%;
+    position: absolute;
+    top: 18%;
+    width: 1%;
+    z-index: 8;
+}
+.m{
+    background-image: linear-gradient(black,white);
+    height: 30%;
+    width: 2%;
+    left: 49%;
+    position: absolute;
+    top: 20%;
+}
+.h{
+    background-image: linear-gradient(grey,black);
+    height: 25%;
+    width: 2.5%;
+    left: 48.7%;
+    top: 24.8%;
+    position: absolute;
+}
+.c{
+    background-image: radial-gradient(brown 1%, grey 55%, black 40%);
+    border-radius: 50%;
+    height: 5%;
+    width: 5%;
+    left: 48%;
+    position: absolute;
+    top: 47.5%;
+}
+@keyframes rtz {
+    100%{
+        transform: rotateZ(360deg);
+    }
+}
+
+input{
+    width: 60px;
+    height: 40px;
+    border-radius: 10px;
+    margin: -1px;
+    outline: none;
+    font-size: 24px;
+}

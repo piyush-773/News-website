@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web developement</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">logo</div>
+        <div class="manu">
+            <ul>
+                <li>A<sup>+</sup></li>
+                <li>A<sup>-</sup></li>
+                <li><i class="fa-solid fa-palette"></i></li>
+            </ul>
+        </div>
+    </header>
+    <div class="main">
+        <div class="left">
+            <div class="html">
+                <label for="html"><i class="fa-brands fa-html5"></i> HTML</label>
+                <textarea onkeyup="compile()" name="html" id="html_code"></textarea>
+            </div>
+            <div class="css">
+                <label for="css"><i class="fa-brands fa-css3-alt"></i> CSS</label>
+                <textarea onkeyup="compile()" name="css" id="css_code"></textarea>
+            </div>
+            <div class="js">
+                <label for="js"><i class="fa-brands fa-js"></i> JS</label>
+                <textarea onkeyup="compile()" name="js" id="js_code"></textarea>
+            </div>
+        </div>
+        <div class="right">
+            <label for="output"><i class="fa-solid fa-play"></i> output</label>
+            <iframe id="output"></iframe>
+        </div>
+    </div>
+    <script>
+        function compile(){
+            var html_code = document.getElementById("html_code").value;
+            var css_code = document.getElementById("css_code").value;
+            var js_code = document.getElementById("js_code").value;
+            var output = document.getElementById("output");
+
+            output.contentDocument.body.innerHTML = html_code + "<style>" + css_code + "</style>";
+            output.contentWindow.eval(js_code);
+        }
+    </script>
+</body>
+</html>

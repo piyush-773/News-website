@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="style.css" />
+	<title>Typing test</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+		integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+	<div class="main">
+		<div class="container" id="gamePage">
+			<header class="header">
+				<div class="logo">
+					<p style="background-color: yellow; border-radius: 5px 0;">Typer</p>
+					<p style="margin-left: 30px;background-color: black;color:white; border-radius: 0 10px;">speed</p>
+				</div>
+				<div class="controls">
+					<div class="type-btns">
+						<span>| Language |</span>
+						<button class="btn active" id="english">English</button>
+						<span>|</span>
+						<button class="btn" id="hindi">Hindi</button>
+					</div>
+					<div class="settings">
+						<div class="duration">
+							<span>time |</span>
+							<button class="btns btn active" id="time15">60</button>
+							<button class="btns btn" id="time30">180</button>
+							<button class="btns btn" id="time60">300</button>
+							<button class="btn" id="c_time" onclick="popup()"><i class="fa-solid fa-screwdriver-wrench"></i></button>
+						</div>
+					</div>
+					<div class="extra_control">
+						<div title="Alt + Enter" onclick="toggleTheme()" class="theme">
+							<i class="fa-solid fa-palette"></i>
+						</div>
+						<div title="Enter" onclick="newGame()" class="refresh">
+							<i class="fa-solid fa-rotate-right"></i>
+						</div>
+					</div>
+				</div>
+				<div class="hide">
+					<button class="btn"><i class="fa-solid fa-gear"></i> Test settings</button>
+				</div>
+			</header>
+
+			<div id="info" class="game_info" style="text-align: left; width: 100%;">
+				<div id="timer"></div>
+			</div>
+			<div id="game" class="text_area" tabindex="0">
+				<div id="words" class="words">loading ...</div>
+				<div class="focus">Click here to focus</div>
+				<div id="restart" class="hidden">&#8634; press Enter to restart</div>
+				<div id="cursor" class="cursor"></div>
+			</div>
+			<div class="keyboard">
+				<div class="row">
+					<div class="key" data-key="1">1</div>
+					<div class="key" data-key="2">2</div>
+					<div class="key" data-key="3">3</div>
+					<div class="key" data-key="4">4</div>
+					<div class="key" data-key="5">5</div>
+					<div class="key" data-key="6">6</div>
+					<div class="key" data-key="7">7</div>
+					<div class="key" data-key="8">8</div>
+					<div class="key" data-key="9">9</div>
+					<div class="key" data-key="0">0</div>
+				</div>
+				<div class="row">
+					<div class="key" data-key="q">q</div>
+					<div class="key" data-key="w">w</div>
+					<div class="key" data-key="e">e</div>
+					<div class="key" data-key="r">r</div>
+					<div class="key" data-key="t">t</div>
+					<div class="key" data-key="y">y</div>
+					<div class="key" data-key="u">u</div>
+					<div class="key" data-key="i">i</div>
+					<div class="key" data-key="o">o</div>
+					<div class="key" data-key="p">p</div>
+				</div>
+				<div class="row">
+					<div class="key" data-key="a">a</div>
+					<div class="key" data-key="s">s</div>
+					<div class="key" data-key="d">d</div>
+					<div class="key" data-key="f">f</div>
+					<div class="key" data-key="g">g</div>
+					<div class="key" data-key="h">h</div>
+					<div class="key" data-key="j">j</div>
+					<div class="key" data-key="k">k</div>
+					<div class="key" data-key="l">l</div>
+				</div>
+				<div class="row">
+					<div class="key" data-key="z">z</div>
+					<div class="key" data-key="x">x</div>
+					<div class="key" data-key="c">c</div>
+					<div class="key" data-key="v">v</div>
+					<div class="key" data-key="b">b</div>
+					<div class="key" data-key="n">n</div>
+					<div class="key" data-key="m">m</div>
+				</div>
+			</div>
+			<div class="pop_up">
+				<div class="custom_time_Popup" id="custom_time_Popup">
+					<div class="title">Test duration</div>
+					<div class="preview">Total time: 1 second</div>
+					<input id="number" type="number" value="1" required title="test duration">
+					<div class="preview">
+						set a time between 1's to infinite time.<br>
+						It begins with a spark, a curiosity ignited by the dance of keys beneath your fingertips.
+					</div>
+					<button onclick="set_c_time()">ok</button>
+				</div>
+			</div>
+			<div id="result_div" class="result_div">
+				<div class="result_data">
+					<div id="result" class="app_result">
+						<div class="resultdata">
+							<div class="left">
+								<span id="wpm">0</span>
+								<span>WPM</span>
+							</div>
+							<div class="right">
+								<span id="accuracy">0</span>
+								<span>% Accuracy</span>
+							</div>
+						</div>
+						<div class="testmode">
+							<span id="test"></span>
+							<span id="testTime"></span>
+						</div>
+						<div title="Enter" onclick="newGame()" class="refresh">
+							<i class="fa-solid fa-rotate-right"></i>
+						</div>
+					</div>
+				</div>
+				<div class="control">
+					<span><span class="ctrl">'Enter'</span> -> restart</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="/js/English_text.js"></script>
+	<script src="/js/Hindi_text.js"></script>
+	<script src="/js/script.js"></script>
+</body>
+
+</html>
